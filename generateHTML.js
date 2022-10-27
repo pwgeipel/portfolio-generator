@@ -34,4 +34,4 @@ const generateHTML = (data) => {
     `
 }
 
-module.exports = generateHTML
+export default generateHTML
