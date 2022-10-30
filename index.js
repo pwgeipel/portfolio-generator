@@ -1,3 +1,5 @@
+import fs from "fs"
+
 import inquirer from 'inquirer'
 import generateHTML from './generateHTML.js'
 
@@ -34,7 +36,12 @@ inquirer.prompt([
         console.log(answers)
 
         //generate HTML string
-        generateHTML(answers)
+        const html = generateHTML(answers)
         // write (save) the file
+
+        fs.writeFile('./portfolio.html', html, error => {
+            if (error) throw error
+            console. log('HIML saved!')
+    })
     })
     .catch(error => console.log(error))
